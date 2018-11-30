@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{038E097F-10A4-43AD-82F0-111EAF5F6306}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DTcms.API</RootNamespace>
+    <AssemblyName>DTcms.API</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Senparc.Weixin, Version=3.3.9.26585, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>H:\源码\修改\DTcms\DTcms.API\bin\Debug\Senparc.Weixin.dll</HintPath>
+    </Reference>
+    <Reference Include="Senparc.Weixin.MP, Version=12.4.6.31436, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>H:\源码\修改\DTcms\DTcms.API\bin\Debug\Senparc.Weixin.MP.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="OAuth\feixin_helper.cs" />
+    <Compile Include="OAuth\kaixin_helper.cs" />
+    <Compile Include="OAuth\oauth_config.cs" />
+    <Compile Include="OAuth\oauth_helper.cs" />
+    <Compile Include="OAuth\qq_helper.cs" />
+    <Compile Include="OAuth\renren_helper.cs" />
+    <Compile Include="OAuth\sina_helper.cs" />
+    <Compile Include="OAuth\taobao_helper.cs" />
+    <Compile Include="OAuth\weixin_helper.cs" />
+    <Compile Include="Payment\alipaymb\AlipayConfig.cs" />
+    <Compile Include="Payment\alipaymb\AlipayCore.cs" />
+    <Compile Include="Payment\alipaymb\AlipayNotify.cs" />
+    <Compile Include="Payment\alipaymb\AlipaySubmit.cs" />
+    <Compile Include="Payment\alipaymb\MD5.cs" />
+    <Compile Include="Payment\alipaymb\RSA.cs" />
+    <Compile Include="Payment\alipaypc\AlipayConfig.cs" />
+    <Compile Include="Payment\alipaypc\AlipayCore.cs" />
+    <Compile Include="Payment\alipaypc\AlipayNotify.cs" />
+    <Compile Include="Payment\alipaypc\AlipayService.cs" />
+    <Compile Include="Payment\alipaypc\AlipaySubmit.cs" />
+    <Compile Include="Payment\chinabankpc\Config.cs" />
+    <Compile Include="Payment\chinabankpc\Service.cs" />
+    <Compile Include="Payment\tenpaypc\ClientResponseHandler.cs" />
+    <Compile Include="Payment\tenpaypc\MD5Util.cs" />
+    <Compile Include="Payment\tenpaypc\RequestHandler.cs" />
+    <Compile Include="Payment\tenpaypc\ResponseHandler.cs" />
+    <Compile Include="Payment\tenpaypc\TenpayHttpClient.cs" />
+    <Compile Include="Payment\tenpaypc\TenpayUtil.cs" />
+    <Compile Include="Payment\wxpay\H5ApiConfig.cs" />
+    <Compile Include="Payment\wxpay\H5ApiPay.cs" />
+    <Compile Include="Payment\wxpay\HttpService.cs" />
+    <Compile Include="Payment\wxpay\JsApiConfig.cs" />
+    <Compile Include="Payment\wxpay\JsApiPay.cs" />
+    <Compile Include="Payment\wxpay\NativeConfig.cs" />
+    <Compile Include="Payment\wxpay\NativePay.cs" />
+    <Compile Include="Payment\wxpay\WxPayData.cs" />
+    <Compile Include="Payment\wxpay\WxPayException.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Weixin\Common\CRMComm.cs" />
+    <Compile Include="Weixin\Common\LocationService.cs" />
+    <Compile Include="Weixin\Common\MessageFunction.cs" />
+    <Compile Include="Weixin\Handler\CustomMessageContext.cs" />
+    <Compile Include="Weixin\Handler\CustomMessageHandler.cs" />
+    <Compile Include="Weixin\Handler\CustomMessageHandler_Events.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DTcms.BLL\DTcms.BLL.csproj">
+      <Project>{c1175f92-1276-49df-b047-f6cab69a14c8}</Project>
+      <Name>DTcms.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTcms.Common\DTcms.Common.csproj">
+      <Project>{8eda166b-293a-4a70-a540-dc4a6d1fe1da}</Project>
+      <Name>DTcms.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTcms.Model\DTcms.Model.csproj">
+      <Project>{dad9afdd-3a82-48bd-909e-806a43ac0c2c}</Project>
+      <Name>DTcms.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
