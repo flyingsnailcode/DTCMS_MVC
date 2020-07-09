@@ -396,7 +396,7 @@ namespace DTcms.Web.Mvc.UI
 
         #region 生成静态方法
         /// <summary>
-        /// 生成静态文件方法
+        /// 生成静态文件方法,此方法需要重新生成文件
         /// </summary>
         /// <param name="context"></param>
         public string handleHtml()
